@@ -1,0 +1,423 @@
+/* ==========================================================================
+   style.css — Site sobre Rita Lee
+   Tema: psicodélico / rock brasileiro anos 70, inspirado em Os Mutantes,
+   pôsteres de show e na estética pop-art tropicalista.
+   ========================================================================== */
+
+:root {
+    --rosa-choque: #ff2d95;
+    --roxo-psicodelico: #6c2eb5;
+    --roxo-profundo: #2d1155;
+    --laranja-vibrante: #ff7a00;
+    --amarelo-sol: #ffd23f;
+    --verde-tropicalia: #2ee6a6;
+    --fundo-escuro: #150826;
+    --texto-claro: #fdf6ff;
+    --texto-escuro: #1a0b2e;
+    --branco: #ffffff;
+    --sombra: rgba(0, 0, 0, 0.4);
+    --vidro: rgba(255, 255, 255, 0.07);
+    --borda-vidro: rgba(255, 255, 255, 0.14);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(255, 45, 149, 0.25), transparent 40%),
+        radial-gradient(circle at 85% 0%, rgba(46, 230, 166, 0.18), transparent 45%),
+        radial-gradient(circle at 50% 100%, rgba(255, 122, 0, 0.2), transparent 45%),
+        linear-gradient(135deg, var(--fundo-escuro), var(--roxo-profundo) 55%, var(--roxo-psicodelico));
+    background-attachment: fixed;
+    color: var(--texto-claro);
+    line-height: 1.6;
+    padding: 0 0 3rem;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+.eyebrow {
+    font-family: 'Bungee', 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* ---------- Hero / cabeçalho principal ---------- */
+.hero {
+    text-align: center;
+    padding: 3.5rem 1.5rem 2.5rem;
+    position: relative;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--verde-tropicalia);
+    background: var(--vidro);
+    border: 1px solid var(--borda-vidro);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem, 7vw, 4.2rem);
+    color: var(--amarelo-sol);
+    text-shadow:
+        3px 3px 0 var(--rosa-choque),
+        6px 6px 0 var(--roxo-psicodelico);
+    line-height: 1.1;
+}
+
+.subtitulo {
+    margin-top: 0.75rem;
+    font-size: 1.15rem;
+    color: var(--texto-claro);
+    opacity: 0.85;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+h2 {
+    color: var(--amarelo-sol);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 6px solid var(--laranja-vibrante);
+    padding-left: 0.75rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ---------- Parágrafos e texto ---------- */
+p {
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+#bio p {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+p b {
+    color: var(--laranja-vibrante);
+}
+
+#fonte-texto {
+    text-align: center;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+#fonte-texto a {
+    color: var(--amarelo-sol);
+}
+
+/* ---------- Imagem ---------- */
+img {
+    display: block;
+    max-width: 320px;
+    width: 90%;
+    margin: 0 auto 1.5rem;
+    border: 6px solid var(--amarelo-sol);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--sombra);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03) rotate(-1deg);
+}
+
+/* ---------- Cartões de vidro ---------- */
+.card {
+    background: var(--vidro);
+    border: 1px solid var(--borda-vidro);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 18px var(--sombra);
+}
+
+/* ---------- Botões ---------- */
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
+#myButton,
+#curiosidadeButton {
+    display: block;
+    margin: 1.5rem auto 0;
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--texto-escuro);
+    background: linear-gradient(90deg, var(--amarelo-sol), var(--laranja-vibrante));
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px var(--sombra);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#myButton:hover,
+#curiosidadeButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px var(--sombra);
+}
+
+#myButton:active,
+#curiosidadeButton:active {
+    transform: translateY(0);
+}
+
+/* ---------- Curiosidades ---------- */
+#curiosidade-texto {
+    min-height: 3rem;
+    font-style: italic;
+}
+
+/* ---------- Estatísticas ---------- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.stat-numero {
+    display: block;
+    font-family: 'Bungee', sans-serif;
+    font-size: 2.2rem;
+    color: var(--verde-tropicalia);
+}
+
+.stat-legenda {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 0.35rem;
+}
+
+/* ---------- Blockquote ---------- */
+blockquote {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--texto-escuro);
+    background: var(--amarelo-sol);
+    border-left: 8px solid var(--rosa-choque);
+    border-radius: 8px;
+    box-shadow: 0 6px 16px var(--sombra);
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    font-style: normal;
+    font-weight: 700;
+    text-align: right;
+    color: var(--roxo-psicodelico);
+}
+
+/* ---------- Conquistas ---------- */
+main ul {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+
+main li {
+    position: relative;
+    padding: 0.5rem 0 0.5rem 2rem;
+    font-size: 1.05rem;
+}
+
+main li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: var(--rosa-choque);
+}
+
+/* ---------- Apelido ---------- */
+#apelido {
+    display: block;
+    text-align: center;
+    color: var(--rosa-choque);
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin: 2.5rem 0 0.5rem;
+}
+
+/* ---------- Rodapé e contato ---------- */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--texto-claro);
+    opacity: 0.8;
+}
+
+footer a {
+    color: var(--laranja-vibrante);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+address {
+    font-style: normal;
+    margin-top: 0.5rem;
+}
+
+address a {
+    color: var(--amarelo-sol);
+    text-decoration: none;
+}
+
+address a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Botão voltar ao topo ---------- */
+#topoButton {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, var(--rosa-choque), var(--roxo-psicodelico));
+    color: var(--texto-claro);
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 6px 14px var(--sombra);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 40;
+}
+
+#topoButton.visivel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* ---------- Toasts ---------- */
+#toast-container {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 100;
+    width: min(90vw, 380px);
+}
+
+.toast {
+    background: var(--branco);
+    color: var(--texto-escuro);
+    padding: 0.85rem 1.1rem;
+    border-radius: 10px;
+    border-left: 6px solid var(--rosa-choque);
+    box-shadow: 0 8px 20px var(--sombra);
+    font-size: 0.95rem;
+    font-weight: 600;
+    animation: entrar-toast 0.25s ease;
+}
+
+.toast.saindo {
+    animation: sair-toast 0.25s ease forwards;
+}
+
+@keyframes entrar-toast {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sair-toast {
+    to {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+}
+
+/* ---------- Reveal ao rolar ---------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    #topoButton,
+    .toast {
+        transition: none;
+        animation: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    blockquote {
+        font-size: 1rem;
+        padding: 1rem 1.25rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
